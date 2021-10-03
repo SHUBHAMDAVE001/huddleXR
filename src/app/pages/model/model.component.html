@@ -1,0 +1,95 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="modal-title h4">
+            <ng-container>
+                Work Life Balance & Efficiency
+            </ng-container>
+        </div>
+        <div class="float-right">
+            <a class="mr-2" (click)="modelClose()">
+                <i class="fa fa-close"></i>
+            </a>
+        </div>
+    </div>
+    <div class="overlay overlay-block cursor-default modal-body">
+        <ng-container>
+            <ng-container [ngTemplateOutlet]="roomRedirectTemplate" [ngTemplateOutletContext]="{message: false}">
+            </ng-container>
+
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 mb-2">
+                        <img src="assets/image/model.jpg" alt="wlb-image">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <div class="row">
+                            <div class="work-life col-sm-7 col-md-7 col-lg-7 float-left">
+                                Work Life balanace and Efficiency
+                            </div>
+                            <div class="work-life col-sm-5 col-md-5 col-lg-5 float-right">
+                                6/6 Documents added
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                How could we best structure the working week under the "New Normal"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table">
+                    <table class="table">
+                        <tbody class="table-body">
+                            <tr *ngFor="let document of doucmentsArray; index as i">
+                                <td class="col-5">
+                                    <i class="fa fa-file" aria-hidden="true"></i>
+                                    <ng-container>
+                                        {{ document.documentName }}
+                                        <br>
+                                        <span>
+                                            <a href="https://www.google.com/" target="_blank">
+                                                View Document
+                                            </a>
+                                        </span>
+                                    </ng-container>
+                                </td>
+                                <td class="col-5">
+                                    <i class="fas fa-vote-yea"></i>
+                                    Cast your vote
+                                    <input type="radio" id="document_{{i}}" value={{document.documentName}}>
+                                </td>
+                                <td class="col-2 vote">
+                                    Vote Counts
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <ng-container [ngTemplateOutlet]="roomRedirectTemplate" [ngTemplateOutletContext]="{message: true}">
+            </ng-container>
+        </ng-container>
+    </div>
+    <!-- <div class="modal-footer">
+        Cancel
+    </div> -->
+</div>
+
+<ng-template #roomRedirectTemplate let-message="message">
+    <div class="flex-container">
+        <div class="top-left">
+            <a href="#">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                Back to voting room</a>
+        </div>
+        <div *ngIf="message">
+            <button type="submit" data-inline="true" class="btn btn-dark">
+                Submit Your Vote
+            </button>
+        </div>
+        <div class="top-right">
+            <a href="#">
+                Go to room
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,52 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    padding: 20px 10px;
+}
+
+.flex-container {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.top-left {
+    flex: 50%;
+}
+
+.top-right {
+    flex: 50%;
+    text-align: right;
+}
+
+.work-life {
+    font-weight: 500;
+}
+
+.vote {
+    font-weight: 600;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+@media (max-width:414px) {
+    .work-life {
+        margin-bottom: 10px;
+    }
+}
+
+.btn {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.table {
+    margin-top: 20px;
+    height: 200px;
+    overflow-y: auto;
+}
